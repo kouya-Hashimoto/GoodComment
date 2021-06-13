@@ -3,27 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25695FE34C1B825F815CC389 /* Pods_GoodComment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7E2793735AC1862DA0C647 /* Pods_GoodComment.framework */; };
 		B3CCF3A7267387A200F95312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3A6267387A200F95312 /* AppDelegate.swift */; };
 		B3CCF3A9267387A200F95312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3A8267387A200F95312 /* SceneDelegate.swift */; };
-		B3CCF3AB267387A200F95312 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3AA267387A200F95312 /* ViewController.swift */; };
 		B3CCF3AE267387A200F95312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3AC267387A200F95312 /* Main.storyboard */; };
 		B3CCF3B0267387A300F95312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3AF267387A300F95312 /* Assets.xcassets */; };
 		B3CCF3B3267387A300F95312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3B1267387A300F95312 /* LaunchScreen.storyboard */; };
+		B3CCF3BC26738E3900F95312 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3BB26738E3900F95312 /* 1.json */; };
+		B3CCF3BF26738EEA00F95312 /* introViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3BE26738EEA00F95312 /* introViewController.swift */; };
+		B3CCF3CB2674D6BD00F95312 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3CA2674D6BD00F95312 /* SettingViewController.swift */; };
+		B3CCF3CE2674D70E00F95312 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3CD2674D70E00F95312 /* LoginViewController.swift */; };
+		B3CCF3D32674D86D00F95312 /* PastRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3D22674D86D00F95312 /* PastRankingViewController.swift */; };
+		B3CCF3D62674D95200F95312 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3D52674D95200F95312 /* TopicViewController.swift */; };
+		B3CCF3DB2674EE5600F95312 /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3DA2674EE5600F95312 /* 3.json */; };
+		B3CCF3DE2674EF5200F95312 /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3DD2674EF5200F95312 /* 2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B7E2793735AC1862DA0C647 /* Pods_GoodComment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodComment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DF6A765ABFED646D4AF479A /* Pods-GoodComment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodComment.release.xcconfig"; path = "Target Support Files/Pods-GoodComment/Pods-GoodComment.release.xcconfig"; sourceTree = "<group>"; };
 		B3CCF3A3267387A200F95312 /* GoodComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CCF3A6267387A200F95312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3CCF3A8267387A200F95312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B3CCF3AA267387A200F95312 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3CCF3AD267387A200F95312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3CCF3AF267387A300F95312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3CCF3B2267387A300F95312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3CCF3B4267387A300F95312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3CCF3BB26738E3900F95312 /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
+		B3CCF3BE26738EEA00F95312 /* introViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introViewController.swift; sourceTree = "<group>"; };
+		B3CCF3CA2674D6BD00F95312 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B3CCF3CD2674D70E00F95312 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B3CCF3D22674D86D00F95312 /* PastRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRankingViewController.swift; sourceTree = "<group>"; };
+		B3CCF3D52674D95200F95312 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
+		B3CCF3DA2674EE5600F95312 /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
+		B3CCF3DD2674EF5200F95312 /* 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2.json; sourceTree = "<group>"; };
+		D0E7B79356DD9C967823A1E1 /* Pods-GoodComment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodComment.debug.xcconfig"; path = "Target Support Files/Pods-GoodComment/Pods-GoodComment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25695FE34C1B825F815CC389 /* Pods_GoodComment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B19F18224E8461DBA8C7C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B7E2793735AC1862DA0C647 /* Pods_GoodComment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3CCF39A267387A200F95312 = {
 			isa = PBXGroup;
 			children = (
 				B3CCF3A5267387A200F95312 /* GoodComment */,
 				B3CCF3A4267387A200F95312 /* Products */,
+				E0CA0DA544CD729D799FEB93 /* Pods */,
+				8B19F18224E8461DBA8C7C07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +85,55 @@
 		B3CCF3A5267387A200F95312 /* GoodComment */ = {
 			isa = PBXGroup;
 			children = (
-				B3CCF3A6267387A200F95312 /* AppDelegate.swift */,
-				B3CCF3A8267387A200F95312 /* SceneDelegate.swift */,
-				B3CCF3AA267387A200F95312 /* ViewController.swift */,
-				B3CCF3AC267387A200F95312 /* Main.storyboard */,
-				B3CCF3AF267387A300F95312 /* Assets.xcassets */,
-				B3CCF3B1267387A300F95312 /* LaunchScreen.storyboard */,
+				B3CCF3C62674A3EC00F95312 /* Model */,
+				B3CCF3C72674A3F900F95312 /* View */,
+				B3CCF3C82674A40100F95312 /* Controller */,
 				B3CCF3B4267387A300F95312 /* Info.plist */,
+				B3CCF3BB26738E3900F95312 /* 1.json */,
+				B3CCF3DD2674EF5200F95312 /* 2.json */,
+				B3CCF3DA2674EE5600F95312 /* 3.json */,
 			);
 			path = GoodComment;
+			sourceTree = "<group>";
+		};
+		B3CCF3C62674A3EC00F95312 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3CCF3C72674A3F900F95312 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3CCF3AF267387A300F95312 /* Assets.xcassets */,
+				B3CCF3AC267387A200F95312 /* Main.storyboard */,
+				B3CCF3B1267387A300F95312 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3CCF3C82674A40100F95312 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3CCF3BE26738EEA00F95312 /* introViewController.swift */,
+				B3CCF3D52674D95200F95312 /* TopicViewController.swift */,
+				B3CCF3CA2674D6BD00F95312 /* SettingViewController.swift */,
+				B3CCF3D22674D86D00F95312 /* PastRankingViewController.swift */,
+				B3CCF3CD2674D70E00F95312 /* LoginViewController.swift */,
+				B3CCF3A6267387A200F95312 /* AppDelegate.swift */,
+				B3CCF3A8267387A200F95312 /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E0CA0DA544CD729D799FEB93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0E7B79356DD9C967823A1E1 /* Pods-GoodComment.debug.xcconfig */,
+				9DF6A765ABFED646D4AF479A /* Pods-GoodComment.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3CCF3B7267387A300F95312 /* Build configuration list for PBXNativeTarget "GoodComment" */;
 			buildPhases = (
+				4F33A4F5E1789F655A600B8A /* [CP] Check Pods Manifest.lock */,
 				B3CCF39F267387A200F95312 /* Sources */,
 				B3CCF3A0267387A200F95312 /* Frameworks */,
 				B3CCF3A1267387A200F95312 /* Resources */,
+				47C3D071F5710FE54E52EC05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,22 +195,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CCF3DB2674EE5600F95312 /* 3.json in Resources */,
 				B3CCF3B3267387A300F95312 /* LaunchScreen.storyboard in Resources */,
+				B3CCF3BC26738E3900F95312 /* 1.json in Resources */,
 				B3CCF3B0267387A300F95312 /* Assets.xcassets in Resources */,
 				B3CCF3AE267387A200F95312 /* Main.storyboard in Resources */,
+				B3CCF3DE2674EF5200F95312 /* 2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47C3D071F5710FE54E52EC05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodComment/Pods-GoodComment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodComment/Pods-GoodComment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodComment/Pods-GoodComment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F33A4F5E1789F655A600B8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodComment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3CCF39F267387A200F95312 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3CCF3AB267387A200F95312 /* ViewController.swift in Sources */,
+				B3CCF3CE2674D70E00F95312 /* LoginViewController.swift in Sources */,
+				B3CCF3CB2674D6BD00F95312 /* SettingViewController.swift in Sources */,
+				B3CCF3D62674D95200F95312 /* TopicViewController.swift in Sources */,
+				B3CCF3D32674D86D00F95312 /* PastRankingViewController.swift in Sources */,
 				B3CCF3A7267387A200F95312 /* AppDelegate.swift in Sources */,
 				B3CCF3A9267387A200F95312 /* SceneDelegate.swift in Sources */,
+				B3CCF3BF26738EEA00F95312 /* introViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = hashimotokouya/Dropbox/GoodComment/GoodComment/Model/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -271,6 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = hashimotokouya/Dropbox/GoodComment/GoodComment/Model/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -283,12 +405,13 @@
 		};
 		B3CCF3B8267387A300F95312 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E7B79356DD9C967823A1E1 /* Pods-GoodComment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6PMKS9AH8Y;
-				INFOPLIST_FILE = GoodComment/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GoodComment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +425,13 @@
 		};
 		B3CCF3B9267387A300F95312 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF6A765ABFED646D4AF479A /* Pods-GoodComment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6PMKS9AH8Y;
-				INFOPLIST_FILE = GoodComment/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GoodComment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
