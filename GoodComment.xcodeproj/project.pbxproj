@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		25695FE34C1B825F815CC389 /* Pods_GoodComment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7E2793735AC1862DA0C647 /* Pods_GoodComment.framework */; };
+		B308274326778CC300D9DBE4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308274226778CC300D9DBE4 /* TabBarController.swift */; };
+		B33108652677876600179209 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B33108642677876600179209 /* GoogleService-Info.plist */; };
+		B360A8E626762F1500EF6FEC /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = B360A8E526762F1500EF6FEC /* 2.json */; };
+		B360A8F92677777000EF6FEC /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = B360A8F82677777000EF6FEC /* 3.json */; };
 		B3CCF3A7267387A200F95312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3A6267387A200F95312 /* AppDelegate.swift */; };
 		B3CCF3A9267387A200F95312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3A8267387A200F95312 /* SceneDelegate.swift */; };
 		B3CCF3AE267387A200F95312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3AC267387A200F95312 /* Main.storyboard */; };
@@ -19,13 +23,15 @@
 		B3CCF3CE2674D70E00F95312 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3CD2674D70E00F95312 /* LoginViewController.swift */; };
 		B3CCF3D32674D86D00F95312 /* PastRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3D22674D86D00F95312 /* PastRankingViewController.swift */; };
 		B3CCF3D62674D95200F95312 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CCF3D52674D95200F95312 /* TopicViewController.swift */; };
-		B3CCF3DB2674EE5600F95312 /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3DA2674EE5600F95312 /* 3.json */; };
-		B3CCF3DE2674EF5200F95312 /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = B3CCF3DD2674EF5200F95312 /* 2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B7E2793735AC1862DA0C647 /* Pods_GoodComment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodComment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF6A765ABFED646D4AF479A /* Pods-GoodComment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodComment.release.xcconfig"; path = "Target Support Files/Pods-GoodComment/Pods-GoodComment.release.xcconfig"; sourceTree = "<group>"; };
+		B308274226778CC300D9DBE4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B33108642677876600179209 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B360A8E526762F1500EF6FEC /* 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2.json; sourceTree = "<group>"; };
+		B360A8F82677777000EF6FEC /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
 		B3CCF3A3267387A200F95312 /* GoodComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CCF3A6267387A200F95312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3CCF3A8267387A200F95312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,8 +45,6 @@
 		B3CCF3CD2674D70E00F95312 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3CCF3D22674D86D00F95312 /* PastRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRankingViewController.swift; sourceTree = "<group>"; };
 		B3CCF3D52674D95200F95312 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
-		B3CCF3DA2674EE5600F95312 /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
-		B3CCF3DD2674EF5200F95312 /* 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2.json; sourceTree = "<group>"; };
 		D0E7B79356DD9C967823A1E1 /* Pods-GoodComment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodComment.debug.xcconfig"; path = "Target Support Files/Pods-GoodComment/Pods-GoodComment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,9 +93,10 @@
 				B3CCF3C72674A3F900F95312 /* View */,
 				B3CCF3C82674A40100F95312 /* Controller */,
 				B3CCF3B4267387A300F95312 /* Info.plist */,
+				B33108642677876600179209 /* GoogleService-Info.plist */,
 				B3CCF3BB26738E3900F95312 /* 1.json */,
-				B3CCF3DD2674EF5200F95312 /* 2.json */,
-				B3CCF3DA2674EE5600F95312 /* 3.json */,
+				B360A8E526762F1500EF6FEC /* 2.json */,
+				B360A8F82677777000EF6FEC /* 3.json */,
 			);
 			path = GoodComment;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				B3CCF3CD2674D70E00F95312 /* LoginViewController.swift */,
 				B3CCF3A6267387A200F95312 /* AppDelegate.swift */,
 				B3CCF3A8267387A200F95312 /* SceneDelegate.swift */,
+				B308274226778CC300D9DBE4 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,12 +201,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3CCF3DB2674EE5600F95312 /* 3.json in Resources */,
 				B3CCF3B3267387A300F95312 /* LaunchScreen.storyboard in Resources */,
 				B3CCF3BC26738E3900F95312 /* 1.json in Resources */,
 				B3CCF3B0267387A300F95312 /* Assets.xcassets in Resources */,
+				B360A8F92677777000EF6FEC /* 3.json in Resources */,
 				B3CCF3AE267387A200F95312 /* Main.storyboard in Resources */,
-				B3CCF3DE2674EF5200F95312 /* 2.json in Resources */,
+				B360A8E626762F1500EF6FEC /* 2.json in Resources */,
+				B33108652677876600179209 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3CCF3CE2674D70E00F95312 /* LoginViewController.swift in Sources */,
+				B308274326778CC300D9DBE4 /* TabBarController.swift in Sources */,
 				B3CCF3CB2674D6BD00F95312 /* SettingViewController.swift in Sources */,
 				B3CCF3D62674D95200F95312 /* TopicViewController.swift in Sources */,
 				B3CCF3D32674D86D00F95312 /* PastRankingViewController.swift in Sources */,

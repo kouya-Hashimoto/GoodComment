@@ -10,7 +10,8 @@ import Lottie
 
 class introViewController: UIViewController,UIScrollViewDelegate {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var baseView: UIView!
+    var scrollView = UIScrollView()
     
     var onboardArray = ["1","2","3"]
     
@@ -18,16 +19,20 @@ class introViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scrollView.frame = view.frame
+        baseView.addSubview(scrollView)
+        
         scrollView.isPagingEnabled = true
         
+        
         setUpScroll()
+        
         
         for i in 0...2{
             
             let animationView = AnimationView()
             let animetion = Animation.named(onboardArray[i])
-            animationView.frame = CGRect(x: CGFloat(i) * view.frame.size.width, y: view.frame.size.height, width: view.frame.size.width, height: view.frame.size.height)
+            animationView.frame = CGRect(x: CGFloat(i) * view.frame.size.width, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             
             animationView.animation = animetion
             animationView.contentMode = .scaleAspectFit
@@ -46,17 +51,22 @@ class introViewController: UIViewController,UIScrollViewDelegate {
         
         for i in 0...2{
             
-            let onboardLabel = UILabel(frame: CGRect(x: CGFloat(i) * view.frame.size.width, y: view.frame.size.height/3, width: scrollView.frame.width, height: view.frame.size.height))
+            let onboardLabel = UILabel(frame: CGRect(x: (CGFloat(i) * view.frame.size.width), y: view.frame.size.height/3, width: view.frame.width, height: view.frame.size.height))
             
-            onboardLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+            onboardLabel.font = UIFont.boldSystemFont(ofSize: 20)
             onboardLabel.textAlignment = .center
             onboardLabel.text = onbordStringArray[i]
+            onboardLabel.numberOfLines = 0
             scrollView.addSubview(onboardLabel)
             
         }
         
     }
-
+    @IBAction func skipButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var skipButton: UIButton!
+    
     /*
     // MARK: - Navigation
 
