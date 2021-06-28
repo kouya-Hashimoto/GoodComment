@@ -8,95 +8,150 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import PKHUD
+
+class DataManeger {
+    static let shared = DataManeger()
+    var user:User?
+}
+//ユーザーのモデル
+struct User {
+    let name: String
+    let createdAt: Timestamp
+    let email: String
+    
+    init(dic: [String: Any]) {
+        self.name = dic["name"] as! String
+        self.createdAt = dic["createdAt"] as! Timestamp
+        self.email = dic["email"] as! String
+    }
+}
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var mailAddressTextField: UITextField!
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var displayNameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     
+    @IBAction func tappedRegisterButton(_ sender: Any) {
+        handleAuthToFirebase()
+    }
+    @IBAction func tappedAlreadyHaveAccountButton(_ sender: Any) {
+        
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        let NewLoginViewController = storyBoard.instantiateViewController(identifier: "NewLoginViewController") as! NewLoginViewController
+            present(NewLoginViewController, animated: true, completion: nil)
+    }
     
-    // ログインボタンをタップしたときに呼ばれるメソッド
-    @IBAction func handleLoginButton(_ sender: Any) {
-        if let address = mailAddressTextField.text, let password = passwordTextField.text {
-            
-            // アドレスとパスワード名のいずれかでも入力されていない時は何もしない
-            if address.isEmpty || password.isEmpty {
-                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
+    private func handleAuthToFirebase() {
+        HUD.show(.progress, onView: view)
+        guard let password = passwordTextField.text  else {return}
+        guard let email = emailTextField.text else {return}
+        
+        Auth.auth().createUser(withEmail: email, password: password) { res, err in
+            if let err = err {
+                print("認証情報の保存に失敗しました。\(err)")
+                HUD.hide { (_) in
+                    HUD.flash(.error, delay: 1)
+                }
                 return
             }
-            
-            // HUDで処理中を表示
-            SVProgressHUD.show()
-            
-            Auth.auth().signIn(withEmail: address, password: password) { authResult, error in
-                if let error = error {
-                    print("DEBUG_PRINT: " + error.localizedDescription)
-                    SVProgressHUD.showError(withStatus: "サインインに失敗しました。")
-                    return
-                }
-                print("DEBUG_PRINT: ログインに成功しました。")
-                
-                // HUDを消す
-                SVProgressHUD.dismiss()
-                
-                // 画面を閉じてタブ画面に戻る
-                self.dismiss(animated: true, completion: nil)
-            }
+            self.addUserinfoToFirestore(email: email)
         }
     }
     
-    // アカウント作成ボタンをタップしたときに呼ばれるメソッド
-    @IBAction func handleCreateAccountButton(_ sender: Any) {
-        if let address = mailAddressTextField.text, let password = passwordTextField.text, let displayName = displayNameTextField.text {
-            
-            // アドレスとパスワードと表示名のいずれかでも入力されていない時は何もしない
-            if address.isEmpty || password.isEmpty || displayName.isEmpty {
-                print("DEBUG_PRINT: 何かが空文字です。")
-                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
+    private func addUserinfoToFirestore(email : String) {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        guard let name = self.usernameTextField.text else {return}
+        
+        let docData = ["email": email, "name": name, "createdAt" : Timestamp()] as [String : Any]
+        let userRef = Firestore.firestore().collection("users").document(uid)
+        
+        userRef.setData(docData) { err in
+            if let err = err {
+                print("Firestoreへの保存に失敗しました。\(err)")
+                HUD.hide { (_) in
+                    HUD.flash(.error, delay: 1)
+                }
                 return
             }
+            print("Firestoreへの保存に成功しました。")
             
-            // HUDで処理中を表示
-            SVProgressHUD.show()
-            
-            // アドレスとパスワードでユーザー作成。ユーザー作成に成功すると、自動的にログインする
-            Auth.auth().createUser(withEmail: address, password: password) { authResult, error in
-                if let error = error {
-                    // エラーがあったら原因をprintして、returnすることで以降の処理を実行せずに処理を終了する
-                    print("DEBUG_PRINT: " + error.localizedDescription)
-                    SVProgressHUD.showError(withStatus: "ユーザー作成に失敗しました。")
-                    return
+            userRef.getDocument { (snapshot, err) in
+                if let err = err {
+                    print("ユーザー情報の取得に失敗しました。\(err)")
+                    HUD.hide { (_) in
+                        HUD.flash(.error, delay: 1)
+                    }
                 }
-                print("DEBUG_PRINT: ユーザー作成に成功しました。")
                 
-                // 表示名を設定する
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    let changeRequest = user.createProfileChangeRequest()
-                    changeRequest.displayName = displayName
-                    changeRequest.commitChanges { error in
-                        if let error = error {
-                            // プロフィールの更新でエラーが発生
-                            print("DEBUG_PRINT: " + error.localizedDescription)
-                            SVProgressHUD.showError(withStatus: "表示名の設定に失敗しました。")
-                            return
-                        }
-                        print("DEBUG_PRINT: [displayName = \(user.displayName!)]の設定に成功しました。")
+                guard let data = snapshot?.data() else {return}
+                let user = User.init(dic: data)
+                DataManeger.shared.user = user
+                print("ユーザー情報の取得ができました。\(user.name)")
+                HUD.hide { (_) in
+                    HUD.flash(.success, onView: self.view, delay: 1) { (_) in
+                        self.presentToTabBarController()
                         
-                        // HUDを消す
-                        SVProgressHUD.dismiss()
-                        
-                        // 画面を閉じてタブ画面に戻る
-                        self.dismiss(animated: true, completion: nil)
                     }
                 }
             }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func presentToTabBarController() {
+        let TabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        TabBarController.modalPresentationStyle = .fullScreen
+        TabBarController.selectedIndex = 1
+        self.present(TabBarController, animated: true, completion: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        registerButton.isEnabled = false
+        registerButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+        registerButton.layer.cornerRadius = 10
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        usernameTextField.delegate = self
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showKeybord), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func showKeybord() {
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        if let email = emailTextField.text, let password = passwordTextField.text, let username = usernameTextField.text {
+            
+            if email.isEmpty || password.isEmpty || username.isEmpty {
+                registerButton.isEnabled = false
+                registerButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+            } else {
+                registerButton.isEnabled = true
+                registerButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
+            }
+            
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
 }

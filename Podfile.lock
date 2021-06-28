@@ -344,6 +344,7 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - PKHUD (5.3.0)
   - PromisesObjC (1.2.12)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
@@ -360,6 +361,7 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - ImpressiveNotifications
   - lottie-ios
+  - PKHUD (~> 5.0)
   - SegementSlide
   - SVProgressHUD (= 2.2.5)
 
@@ -386,6 +388,7 @@ SPEC REPOS:
     - leveldb-library
     - lottie-ios
     - nanopb
+    - PKHUD
     - PromisesObjC
     - SDWebImage
     - SegementSlide
@@ -413,11 +416,12 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SegementSlide: 83b56ffb66b9c0edc4e4f2a74229309c62915db3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b95eecc5e2514558e848fb86185fe86cfcae270f
+PODFILE CHECKSUM: 74553d1a8d82e902b5bf1e466aab4fca29ef21fa
 
 COCOAPODS: 1.10.1

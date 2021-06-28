@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import Firebase
 
 class TopicViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            
+        }
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
@@ -26,4 +29,4 @@ class TopicViewController: UIViewController {
     }
     */
 
-}
+

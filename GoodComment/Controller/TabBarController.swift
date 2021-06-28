@@ -8,32 +8,41 @@
 import UIKit
 import Firebase
 
-let userDefaults = UserDefaults.standard
 
 class TabBarController: UITabBarController {
     var isTutorialEnd = false
+    let userDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !isTutorialEnd {
+        userDefaults.register(defaults: ["tutorial": true])
+        
+        let tutorialUnend = userDefaults.bool(forKey: "tutorial")
+        
+        if tutorialUnend {
             let tutorial = self.storyboard?.instantiateViewController(withIdentifier: "tutorial")
             tutorial?.modalPresentationStyle = .fullScreen
             self.present(tutorial!, animated: true, completion: nil)
-            
+            userDefaults.set(false, forKey: "tutorial")
+            print("チュートリアルを終了した")
             return
+        } else {
+            print("チュートリアルは終えています")
+            
         }
         //currentUserがnilならログインしていない
         if Auth.auth().currentUser == nil {
             //ログインしていない時の処理
-            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
             self.present(loginViewController!, animated: true, completion: nil)
-            
+        }else {
+            selectedIndex = 1
         }
     }
     
