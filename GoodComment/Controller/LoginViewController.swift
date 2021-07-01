@@ -78,6 +78,8 @@ class LoginViewController: UIViewController {
             }
             print("Firestoreへの保存に成功しました。")
             
+            UserDefaults.standard.set(self.usernameTextField.text, forKey: "userName")
+            
             userRef.getDocument { (snapshot, err) in
                 if let err = err {
                     print("ユーザー情報の取得に失敗しました。\(err)")

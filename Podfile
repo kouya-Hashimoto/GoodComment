@@ -18,4 +18,5 @@ target 'GoodComment' do
   pod 'FirebaseUI/Storage'
   pod 'SVProgressHUD','2.2.5'
   pod 'PKHUD', '~> 5.0'
+  pod 'EMAlertController'
 end

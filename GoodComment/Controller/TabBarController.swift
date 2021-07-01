@@ -15,7 +15,18 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, err) in
+            if let err = err {
+                print("ユーザー情報の取得に失敗しました。\(err)")
+            }
+            
+            guard let data = snapshot!.data() else {return}
+            let user = User.init(dic: data)
+            DataManeger.shared.user = user
+            print("ユーザー情報の取得ができました。\(user.name)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +57,7 @@ class TabBarController: UITabBarController {
         }
     }
     
+    
     /*
      // MARK: - Navigation
      
@@ -57,3 +69,4 @@ class TabBarController: UITabBarController {
      */
     
 }
+
